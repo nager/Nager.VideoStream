@@ -1,5 +1,5 @@
 # Nager.VideoStream
-Get images from a video stream
+Get images from a video stream, requires [ffmpeg](https://www.ffmpeg.org/)
 
 ```cs
 var streamUrl = "rtsp://192.168.0.10/stream1";
