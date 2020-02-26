@@ -22,6 +22,7 @@ namespace Nager.VideoStream.TestConsole
             var task = client.StartFrameReaderAsync(streamUrl, OutputImageFormat.Bmp, cancellationTokenSource.Token);
             Console.WriteLine("Video Stream Frame handling started");
             Console.ReadLine();
+            client.NewImageReceived -= NewImageReceived;
             cancellationTokenSource.Cancel();
             Console.WriteLine("Video Stream Frame handling stopped");
             Console.ReadLine();
