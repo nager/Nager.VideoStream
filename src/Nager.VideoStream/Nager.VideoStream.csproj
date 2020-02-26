@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <Authors>Tino Hager</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/nager/Nager.VideoStream</RepositoryUrl>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <PackageTags>video stream rtsp frame</PackageTags>
+    <Description>Read frames from a rtsp video stream or from a video file</Description>
+  </PropertyGroup>
+
+</Project>
