@@ -10,4 +10,9 @@ client.NewImageReceived += NewImageReceived;
 var task = client.StartFrameReaderAsync(streamUrl, OutputImageFormat.Bmp, cancellationTokenSource.Token);
 client.NewImageReceived -= NewImageReceived;
 cancellationTokenSource.Cancel();
+
+private static void NewImageReceived(byte[] imageData)
+{
+    File.WriteAllBytes($@"{DateTime.Now.Ticks}.bmp", imageData);
+}
 ```
