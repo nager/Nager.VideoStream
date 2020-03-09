@@ -8,6 +8,8 @@
     <AssemblyVersion>1.0.0</AssemblyVersion>
     <PackageTags>video stream rtsp frame</PackageTags>
     <Description>Read frames from a rtsp video stream or from a video file</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <FileVersion>1.0.0</FileVersion>
   </PropertyGroup>
 
 </Project>
