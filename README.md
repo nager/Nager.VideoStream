@@ -1,6 +1,14 @@
 # Nager.VideoStream
 Get images from a video stream, requires [ffmpeg](https://www.ffmpeg.org/)
 
+## How can I use it?
+
+The package is available on [nuget](https://www.nuget.org/packages/Nager.VideoStream)
+```
+PM> install-package Nager.VideoStream
+```
+
+## Code Example
 ```cs
 var streamUrl = "rtsp://192.168.0.10/stream1";
 var cancellationTokenSource = new CancellationTokenSource();
