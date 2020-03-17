@@ -25,9 +25,9 @@ namespace Nager.VideoStream
             this._ffmpegPath = ffmpegPath;
         }
 
-        public async Task StartFrameReaderAsync(string streamUrlOrVideoFile, OutputImageFormat outputImageFormat, CancellationToken cancellationToken)
+        public async Task StartFrameReaderAsync(InputSource inputSource, OutputImageFormat outputImageFormat, CancellationToken cancellationToken)
         {
-            var inputArgs = $"-y -i {streamUrlOrVideoFile}";
+            var inputArgs = $"-y {inputSource.InputCommand}";
             var outputArgs = $"-c:v {outputImageFormat.ToString().ToLower()} -f image2pipe -";
 
             var startInfo = new ProcessStartInfo

@@ -10,12 +10,14 @@ PM> install-package Nager.VideoStream
 
 ## Code Example
 ```cs
-var streamUrl = "rtsp://192.168.0.10/stream1";
+var inputSource = new StreamInputSource("rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov");
+//var inputSource = new WebcamInputSource("Microsoft® LifeCam HD-3000");
+
 var cancellationTokenSource = new CancellationTokenSource();
 
 var client = new VideoStreamClient();
 client.NewImageReceived += NewImageReceived;
-var task = client.StartFrameReaderAsync(streamUrl, OutputImageFormat.Bmp, cancellationTokenSource.Token);
+var task = client.StartFrameReaderAsync(inputSource, OutputImageFormat.Bmp, cancellationTokenSource.Token);
 client.NewImageReceived -= NewImageReceived;
 cancellationTokenSource.Cancel();
 

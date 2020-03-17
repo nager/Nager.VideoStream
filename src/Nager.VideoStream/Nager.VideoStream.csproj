@@ -5,11 +5,13 @@
     <Authors>Tino Hager</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/nager/Nager.VideoStream</RepositoryUrl>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <AssemblyVersion>1.0.1</AssemblyVersion>
     <PackageTags>video stream rtsp frame</PackageTags>
     <Description>Read frames from a rtsp video stream or from a video file</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <FileVersion>1.0.0</FileVersion>
+    <FileVersion>1.0.1</FileVersion>
+    <Version>1.0.1</Version>
+    <PackageReleaseNotes>Add InputSources</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>
