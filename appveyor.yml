@@ -15,4 +15,4 @@ deploy:
   provider: NuGet
   api_key:
     secure: DSix/vA4f2Bn/U8J2+Q4BufzNClNNL+enzqTdDNo2449kclgbfRV8DDB9aw9iS6R
-  artifact: /.*\.nupkg/
+  artifact: /.*(\.|\.s)nupkg/

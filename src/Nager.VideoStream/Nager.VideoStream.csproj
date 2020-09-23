@@ -5,15 +5,16 @@
     <Authors>Tino Hager</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/nager/Nager.VideoStream</RepositoryUrl>
-    <AssemblyVersion>1.0.3</AssemblyVersion>
+    <AssemblyVersion>1.0.4</AssemblyVersion>
     <PackageTags>video stream rtsp frame camera</PackageTags>
     <Description>Read frames from a rtsp video stream or from a video file</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <FileVersion>1.0.3</FileVersion>
-    <Version>1.0.3</Version>
+    <FileVersion>1.0.4</FileVersion>
+    <Version>1.0.4</Version>
     <PackageReleaseNotes>Add icon to nuget package</PackageReleaseNotes>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageIcon>camera.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
