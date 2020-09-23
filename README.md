@@ -18,8 +18,8 @@ var cancellationTokenSource = new CancellationTokenSource();
 var client = new VideoStreamClient();
 client.NewImageReceived += NewImageReceived;
 var task = client.StartFrameReaderAsync(inputSource, OutputImageFormat.Bmp, cancellationTokenSource.Token);
+//wait for exit
 client.NewImageReceived -= NewImageReceived;
-cancellationTokenSource.Cancel();
 
 private static void NewImageReceived(byte[] imageData)
 {
