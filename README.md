@@ -1,5 +1,5 @@
 # Nager.VideoStream
-Get images from a video stream, requires [ffmpeg](https://www.ffmpeg.org/)
+Get images from a video stream, requires [ffmpeg](https://www.ffmpeg.org/). Download the [ffmpeg binary](https://github.com/BtbN/FFmpeg-Builds/releases)
 
 ## How can I use it?
 
