@@ -32,6 +32,8 @@ void NewImageReceived(byte[] imageData)
 ```
 
 ### Webcam
+You can find out the name of your webcam in the `Windows Device Manager` on `Cameras`
+
 ```cs
 var inputSource = new WebcamInputSource("Microsoft® LifeCam HD-3000");
 
@@ -46,7 +48,7 @@ Console.ReadLine();
 
 client.NewImageReceived -= NewImageReceived;
 
-private static void NewImageReceived(byte[] imageData)
+void NewImageReceived(byte[] imageData)
 {
     File.WriteAllBytes($@"{DateTime.Now.Ticks}.bmp", imageData);
 }
