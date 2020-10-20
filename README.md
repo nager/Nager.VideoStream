@@ -32,10 +32,11 @@ void NewImageReceived(byte[] imageData)
 ```
 
 ### Webcam
-You can find out the name of your webcam in the `Windows Device Manager` on `Cameras`
+You can find out the name of your webcam in the `Windows Device Manager` in the section `Cameras`<br>
+![Windows Device Manager](/doc/WindowsDeviceManager.png)
 
 ```cs
-var inputSource = new WebcamInputSource("Microsoft® LifeCam HD-3000");
+var inputSource = new WebcamInputSource("HP HD Camera");
 
 var cancellationTokenSource = new CancellationTokenSource();
 
