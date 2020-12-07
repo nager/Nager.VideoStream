@@ -1,5 +1,8 @@
 # Nager.VideoStream
-Get images from a video stream, requires [ffmpeg](https://www.ffmpeg.org/). You can download the [ffmpeg binary](https://github.com/BtbN/FFmpeg-Builds/releases) here, they are needed to access the video stream. Just copy the `ffmpeg.exe` into the execution directory.
+This project supports three video sources: Network Camera Stream (e.x. RTSP), Webcam or a Video File. It provides the individual frames as a event. 
+
+## Requirements
+The library requires [ffmpeg](https://www.ffmpeg.org/). You can download the [ffmpeg binary](https://github.com/BtbN/FFmpeg-Builds/releases) here, they are needed to access the video stream. Just copy the `ffmpeg.exe` into the execution directory.
 
 ## How can I use it?
 
