@@ -15,19 +15,28 @@ namespace Nager.VideoStream.TestConsole
             }
 
             //var inputSource = new WebcamInputSource("Microsoft® LifeCam HD-3000");
+            //var inputSource = new FileInputSource("myvideo.mp4");
             var inputSource = new StreamInputSource("rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov");
 
             var cancellationTokenSource = new CancellationTokenSource();
 
+            _ = Task.Run(async () => await StartStreamProcessingAsync(inputSource, cancellationTokenSource.Token));
+            Console.WriteLine("Press any key for stop");
+            Console.ReadKey();
+            cancellationTokenSource.Cancel();
+
+            Console.WriteLine("Press any key for quit");
+            Console.ReadKey();
+        }
+
+        private static async Task StartStreamProcessingAsync(InputSource inputSource, CancellationToken cancellationToken = default)
+        {
+            Console.WriteLine("Start Stream Processing");
             var client = new VideoStreamClient();
             client.NewImageReceived += NewImageReceived;
-            var task = client.StartFrameReaderAsync(inputSource, OutputImageFormat.Bmp, cancellationTokenSource.Token);
-            Console.WriteLine("Video Stream Frame handling started");
-            Task.WaitAll(task);
+            await client.StartFrameReaderAsync(inputSource, OutputImageFormat.Bmp, cancellationToken);
             client.NewImageReceived -= NewImageReceived;
-            cancellationTokenSource.Cancel();
-            Console.WriteLine("Video Stream Frame handling stopped");
-            Console.ReadLine();
+            Console.WriteLine("End Stream Processing");
         }
 
         private static void NewImageReceived(byte[] imageData)
