@@ -11,7 +11,7 @@ The package is available on [nuget](https://www.nuget.org/packages/Nager.VideoSt
 PM> install-package Nager.VideoStream
 ```
 
-## Code Example
+## Examples of use
 
 ### Network Camera (RTSP Stream)
 ```cs
