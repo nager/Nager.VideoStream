@@ -25,7 +25,19 @@ namespace Nager.VideoStream
             this._ffmpegPath = ffmpegPath;
         }
 
-        public async Task StartFrameReaderAsync(InputSource inputSource, OutputImageFormat outputImageFormat, CancellationToken cancellationToken)
+        /// <summary>
+        /// Start Frame reader
+        /// </summary>
+        /// <param name="inputSource">The source of the image frames</param>
+        /// <param name="outputImageFormat"></param>
+        /// <param name="cancellationToken"></param>
+        /// <param name="useShellExecute">Use the Operating System shell to start the process</param>
+        /// <returns></returns>
+        public async Task StartFrameReaderAsync(
+            InputSource inputSource,
+            OutputImageFormat outputImageFormat,
+            CancellationToken cancellationToken = default,
+            bool useShellExecute = false)
         {
             var inputArgs = $"-y {inputSource.InputCommand}";
             var outputArgs = $"-c:v {outputImageFormat.ToString().ToLower()} -f image2pipe -";
@@ -34,7 +46,7 @@ namespace Nager.VideoStream
             {
                 FileName = this._ffmpegPath,
                 Arguments = $"{inputArgs} {outputArgs}",
-                UseShellExecute = false,
+                UseShellExecute = useShellExecute,
                 CreateNoWindow = true,
                 RedirectStandardInput = true,
                 RedirectStandardError = true,
@@ -63,6 +75,7 @@ namespace Nager.VideoStream
                             break;
                         }
 
+                        //Set Image Header with first data
                         if (imageHeader == null)
                         {
                             imageHeader = buffer.Take(5).ToArray();

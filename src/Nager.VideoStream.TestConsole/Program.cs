@@ -34,7 +34,7 @@ namespace Nager.VideoStream.TestConsole
             Console.WriteLine("Start Stream Processing");
             var client = new VideoStreamClient();
             client.NewImageReceived += NewImageReceived;
-            await client.StartFrameReaderAsync(inputSource, OutputImageFormat.Bmp, cancellationToken);
+            await client.StartFrameReaderAsync(inputSource, OutputImageFormat.Bmp, cancellationToken: cancellationToken);
             client.NewImageReceived -= NewImageReceived;
             Console.WriteLine("End Stream Processing");
         }
