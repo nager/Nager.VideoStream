@@ -57,3 +57,23 @@ void NewImageReceived(byte[] imageData)
     File.WriteAllBytes($@"{DateTime.Now.Ticks}.bmp", imageData);
 }
 ```
+### Custom Input Source - Select manual attributes
+```cs
+var inputSource = new CustomInputSource("-rtsp_transport tcp -i rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mp4 -vf transpose=dir=1");
+
+var cancellationTokenSource = new CancellationTokenSource();
+
+var client = new VideoStreamClient();
+client.NewImageReceived += NewImageReceived;
+var task = client.StartFrameReaderAsync(inputSource, OutputImageFormat.Bmp, cancellationTokenSource.Token);
+
+//wait for exit
+Console.ReadLine();
+
+client.NewImageReceived -= NewImageReceived;
+
+void NewImageReceived(byte[] imageData)
+{
+    File.WriteAllBytes($@"{DateTime.Now.Ticks}.bmp", imageData);
+}
+```
