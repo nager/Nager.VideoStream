@@ -15,7 +15,7 @@ PM> install-package Nager.VideoStream
 
 ### Network Camera (RTSP Stream)
 ```cs
-var inputSource = new StreamInputSource("rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov");
+var inputSource = new StreamInputSource("rtsp://videoserver.example/testvideo.mp4");
 
 var cancellationTokenSource = new CancellationTokenSource();
 
