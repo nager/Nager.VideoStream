@@ -2,12 +2,11 @@
 {
     public class CustomInputSource : InputSource
     {
-
         internal override string InputCommand { get; }
 
-        public CustomInputSource(string CustomCommand)
+        public CustomInputSource(string customCommand)
         {
-            InputCommand = CustomCommand;
+            this.InputCommand = customCommand;
         }
     }
 }
