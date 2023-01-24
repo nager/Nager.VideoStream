@@ -1,5 +1,9 @@
 # Nager.VideoStream
-This project supports three video sources: Network Camera Stream (e.x. RTSP), Webcam or a Video File. It provides the individual frames (jpg, png, bmp) as an event. 
+This project supports the sources listed below as input, it triggers an event for each frame in one of the following formats (jpg, png, bmp).
+
+- Network Camera Stream (e.x. RTSP)
+- Webcam
+- Video File
 
 ## Requirements
 The library requires [ffmpeg](https://www.ffmpeg.org/). You can download the [ffmpeg binary](https://github.com/BtbN/FFmpeg-Builds/releases) here, they are needed to access the video stream. Just copy the `ffmpeg.exe` into the execution directory.
