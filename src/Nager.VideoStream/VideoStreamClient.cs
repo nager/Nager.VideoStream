@@ -54,6 +54,7 @@ namespace Nager.VideoStream
             };
 
             using (var ffmpegProcess = new Process { StartInfo = startInfo })
+            using (cancellationToken.Register(() => WaitBeforeKill(ffmpegProcess)))
             {
                 ffmpegProcess.ErrorDataReceived += this.ProcessDataReceived;
 
@@ -99,18 +100,23 @@ namespace Nager.VideoStream
 
                 ffmpegProcess.ErrorDataReceived -= this.ProcessDataReceived;
 
-                ffmpegProcess.WaitForExit(1000);
-
-                if (!ffmpegProcess.HasExited)
-                {
-                    ffmpegProcess.Kill();
-                }
+                WaitBeforeKill(ffmpegProcess);
             }
         }
 
         private void ProcessDataReceived(object sender, DataReceivedEventArgs e)
         {
             this.FFmpegInfoReceived?.Invoke(e.Data);
+        }
+
+        private static void WaitBeforeKill(Process process, int waitForExitMilliseconds = 1000)
+        {
+            process.WaitForExit(waitForExitMilliseconds);
+
+            if (!process.HasExited)
+            {
+                process.Kill();
+            }
         }
     }
 }
