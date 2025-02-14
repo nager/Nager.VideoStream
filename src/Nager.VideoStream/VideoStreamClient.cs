@@ -69,7 +69,7 @@ namespace Nager.VideoStream
 
                     while (!cancellationToken.IsCancellationRequested)
                     {
-                        var length = await frameOutputStream.ReadAsync(buffer, 0, buffer.Length);
+                        var length = await frameOutputStream.ReadAsync(buffer, 0, buffer.Length, cancellationToken);
                         if (length == 0)
                         {
                             break;
