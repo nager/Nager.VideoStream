@@ -10,8 +10,8 @@ The library requires [ffmpeg](https://www.ffmpeg.org/). You can download the [ff
 
 ## How can I use it?
 
-The package is available on [nuget](https://www.nuget.org/packages/Nager.VideoStream)
-```
+The package is available on [NuGet](https://www.nuget.org/packages/Nager.VideoStream)
+```powershell
 PM> install-package Nager.VideoStream
 ```
 
